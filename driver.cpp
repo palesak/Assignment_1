@@ -43,6 +43,32 @@ int Read()
   //cout << sentence <<endl;
   arraySentence.push_back(sentence);
 }
+}
+
+int Print()
+{
+  int count = 0;
+  int sum = 0;
+  string filename;
+  string sentence;
+  vector <string> arraySentence;
+  vector <string> tags;
+  cout << "Enter the name of the file you'd like read"  << endl;
+  //getline(cin, filename);
+  cin >> filename;
+
+  ifstream in(filename);
+  if(!in)
+  {
+    cout << "File cannot be opened\n";
+    return 1;
+  }
+
+  //int *sentence = new int[size];
+  while (getline (in, sentence)) {
+  //cout << sentence <<endl;
+  arraySentence.push_back(sentence);
+}
 
 int wordSize;
 for (int i = 0; i < arraySentence.size(); ++i)
@@ -106,7 +132,7 @@ int main(void)
   //2. ‘p’ (print all tags - this will list all the tags in arbitrary order, to cout)
   else if(menu == "p")
   {
-    cout << menu;
+    Print();
 
 
   }
